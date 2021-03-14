@@ -9,11 +9,15 @@ Below you can find the process of installation, prerequisites and more so you ca
 ### Prerequisites
 
 Install the latest version of npm
-* npm
   ```sh
   npm install npm@latest -g
   ```
-  
+Create a MongoDB Database (optional - or use Robo3T)
+* Link - https://www.mongodb.com/
+
+Create a SendGrid API Key Database
+* Link - https://sendgrid.com/
+
 ### Installation
 
 1. Clone the repo
