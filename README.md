@@ -23,7 +23,7 @@ Install the latest version of npm
 Create a MongoDB Database (optional - or use Robo3T)
 * Link - https://www.mongodb.com/
 
-Create a SendGrid API Key Database
+Create a SendGrid API Key
 * Link - https://sendgrid.com/
 
 ### Installation
