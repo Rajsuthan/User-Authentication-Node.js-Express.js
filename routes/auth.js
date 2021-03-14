@@ -25,9 +25,6 @@ router.post(
     check("password", "Password should be atleast 6 characters").isLength({
       min: 6,
     }),
-    check("displayName", "Display Name should is empty").isLength({
-      min: 3,
-    }),
   ],
   signup
 );

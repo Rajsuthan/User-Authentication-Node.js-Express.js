@@ -1,59 +1,29 @@
 const User = require("../models/user");
 
 exports.getUserById = (req, res, next, id) => {
-  User.findById(id)
-    .populate({
-      path: "projects",
-      model: "Project",
-    })
-    .populate({
-      path: "skills",
-      model: "Skill",
-    })
-    .populate({
-      path: "experiences",
-      model: "Experience",
-    })
-    .populate({
-      path: "social_media",
-      model: "SocialMedia",
-    })
-    .exec((err, user) => {
-      if (err) {
-        return res.status(400).json({
-          error: "No user found in DB",
-        });
-      }
+  User.findById(id).exec((err, user) => {
+    if (err) {
+      return res.status(400).json({
+        error: "No user found in DB",
+      });
+    }
 
-      req.profile = user;
-      next();
-    });
+    req.profile = user;
+    next();
+  });
 };
 
 exports.getUserByName = (req, res, next, name) => {
-  User.findOne({ displayName: name })
-    .populate({
-      path: "projects",
-      model: "Project",
-    })
-    .populate({
-      path: "skills",
-      model: "Skill",
-    })
-    .populate({
-      path: "experiences",
-      model: "Experience",
-    })
-    .exec((err, user) => {
-      if (err || !user) {
-        return res.status(400).json({
-          error: "No user found in DB",
-        });
-      }
+  User.findOne({ displayName: name }).exec((err, user) => {
+    if (err || !user) {
+      return res.status(400).json({
+        error: "No user found in DB",
+      });
+    }
 
-      req.xprofile = user;
-      next();
-    });
+    req.xprofile = user;
+    next();
+  });
 };
 
 exports.getDataUserByName = (req, res) => {
@@ -111,22 +81,4 @@ exports.deleteUser = (req, res) => {
       deletedUser,
     });
   });
-};
-
-exports.updateSocial = (req, res) => {
-  User.findByIdAndUpdate(
-    { _id: req.profile._id },
-    { $set: { social_media: req.body } },
-    { new: true, useFindAndModify: false },
-    (err, updatedUser) => {
-      if (err) {
-        return res.status(400).json({
-          error: "Unable to update user with socials",
-        });
-      }
-
-      (updatedUser.salt = undefined), (updatedUser.encry_password = undefined);
-      res.json(updatedUser);
-    }
-  );
 };

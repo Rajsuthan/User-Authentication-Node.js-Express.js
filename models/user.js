@@ -17,27 +17,9 @@ const userSchema = new mongoose.Schema(
       maxlength: 32,
       trim: true,
     },
-    displayName: {
-      type: String,
-      required: true,
-      maxlength: 20,
-      unique: true,
-      lowercase: true,
-    },
-    title: {
-      type: String,
-      required: true,
-      maxlength: 32,
-      trim: true,
-    },
     aboutme: {
       type: String,
       maxlength: 2000,
-      trim: true,
-    },
-    videoUrl: {
-      type: String,
-      maxlength: 400,
       trim: true,
     },
     email: {
@@ -45,45 +27,6 @@ const userSchema = new mongoose.Schema(
       required: true,
       maxlength: 32,
       trim: true,
-    },
-    projects: {
-      type: [ObjectId],
-      ref: "Project",
-    },
-    skills: {
-      type: [ObjectId],
-      ref: "Skill",
-    },
-    experiences: {
-      type: [ObjectId],
-      ref: "Experience",
-    },
-    social_media: {
-      twitter: {
-        type: String,
-        maxlength: 100,
-        trim: true,
-      },
-      instagram: {
-        type: String,
-        maxlength: 100,
-        trim: true,
-      },
-      linkedin: {
-        type: String,
-        maxlength: 100,
-        trim: true,
-      },
-      behance: {
-        type: String,
-        maxlength: 100,
-        trim: true,
-      },
-      dribbble: {
-        type: String,
-        maxlength: 100,
-        trim: true,
-      },
     },
     verification_code: {
       type: Number,
