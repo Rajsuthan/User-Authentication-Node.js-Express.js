@@ -1,5 +1,5 @@
 # User-Authentication-Node.js-Express.js
-User Authentication REST API built using Node & Express. The REST API include User Login, User Register, Reset Password, storing Email Subscribers, Automatic emails & etc. You just simply clone the Repo, add your Database link and API keys and start using the Rest API.
+User Authentication REST API built using Node & Express. The REST API include User Login, User Register, Reset Password, storing Email Subscribers, Automatic emails & etc. You just simply clone the Repo, add your Database link, add your API keys, customise the API according to your requirements and start using the Rest API.
 
 ## Functionalities & Features 
 * Login
