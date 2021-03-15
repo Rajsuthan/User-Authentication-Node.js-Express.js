@@ -39,13 +39,6 @@ router.delete(
   isAuthenticated,
   deleteUser
 );
-router.put(
-  "/user/social/:userId",
-  apiAuth,
-  isSignedIn,
-  isAuthenticated,
-  updateSocial
-);
 
 // Contact us email
 router.post("/sendemail", apiAuth, contactEmail);
