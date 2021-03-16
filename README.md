@@ -26,6 +26,9 @@ Create a MongoDB Database (optional - or use Robo3T)
 Create a SendGrid API Key
 * Link - https://sendgrid.com/
 
+Add your SendGrid email in  `emailsubscriber.js`
+* Link - https://sendgrid.com/
+
 ### Installation
 
 1. Clone the repo
