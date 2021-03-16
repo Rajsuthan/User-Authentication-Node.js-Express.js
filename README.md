@@ -37,14 +37,17 @@ Create a SendGrid API Key
    npm install
    ```
 3. Update your Databse url in `.env`
+
    ```JS
    DATABASE='ENTER YOUR DB URL'
    ```
 3. Update your SendGrid API key in `.env`
+
    ```JS
    SENDGRID_API_KEY='ENTER YOUR SENDGRID API KEY'
    ```
 4. Add your SendGrid email in `emailsubscriber.js`
+
     ```JS
       exports.sendGridEmailResetPassword = (email, subject, message, code) => {
         sgMail.setApiKey(process.env.SENDGRID_API_KEY);
