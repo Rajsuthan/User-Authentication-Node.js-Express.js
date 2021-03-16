@@ -27,7 +27,26 @@ Create a SendGrid API Key
 * Link - https://sendgrid.com/
 
 Add your SendGrid email in  `emailsubscriber.js`
-* Link - https://sendgrid.com/
+```JS
+  exports.sendGridEmailResetPassword = (email, subject, message, code) => {
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: email,
+      from: "example@example.com", // Please use your Sendgrid email
+      subject: subject,
+      text: `${message}\n\n This is your verification code: ${code}`,
+    };
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log("Email sent");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+};
+
+   ```
 
 ### Installation
 
