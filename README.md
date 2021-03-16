@@ -6,6 +6,7 @@ User Authentication REST API built using Node & Express. The REST API include Us
 * Register
 * Reset Password
 * Logout
+* Email Subscriptions
 * Automatic email on Register or Login
 
 
