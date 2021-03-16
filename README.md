@@ -81,6 +81,22 @@ These environment variables will be used for configuring different services by d
 | `SECRET` | `value`                  | Used for Creating unique tokens                                                                                  |
 | `API_KEY` | `key`               | API Key for your Endpoint (can be anything)                                                                              
 | `SENDGRID_API_KEY` | `key`               | Sendgrid API Key (for sending emails)                                                             
+
+## Routes
+| URL                             | Method | Description                                              | Content (Body)          |
+|---------------------------------|:-----------:|----------------------------------------------------------|-------------------------|
+| /api/signup              |     POST    | Registers a user and sends email verification            | `firstname` `lastname` `email` `password`        |
+| /api/signin                 |     POST    | Login with existing user   | `email` `password`          |
+| /api/sendverificationcode                |     PUT     | Send Verification code to change password  | `email` |
+| /api/resetpassword        |     PUT    | Changes User's Password                    | `id` `verificationCode` `newPassword`  |
+| /api/signout |     GET     | Signs out a User                    | None |
+| /api/user/:userId              |     GET    | Retrieve the Single User | None |
+| /api/user/:userId                    |     PUT     | Updates the Single User and returns user                   | `name` `email` `password`            |
+| /api/user/:userId           |     DELETE    | Deletes the Single User       | None    |
+| /api/users/:userId           |     GET    | Get all Users(only admin)       | None    |
+| /api/emailsubscriber           |     POST    | Add the Email in the DB       | `email`    |
+| /api/emailsubscribers/:userId          |     GET    | Get all Email Subscribers (only admin)       | None    |
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
