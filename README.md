@@ -26,7 +26,25 @@ Create a MongoDB Database (optional - or use Robo3T)
 Create a SendGrid API Key
 * Link - https://sendgrid.com/
 
-Add your SendGrid email in  `emailsubscriber.js`
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Rajsuthan/User-Authentication-Node.js-Express.js
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Update your Databse url in `.env`
+   ```JS
+   DATABASE='ENTER YOUR DB URL'
+   ```
+3. Update your SendGrid API key in `.env`
+   ```JS
+   SENDGRID_API_KEY='ENTER YOUR SENDGRID API KEY'
+   ```
+4. Add your SendGrid email in  `emailsubscriber.js`
 ```JS
   exports.sendGridEmailResetPassword = (email, subject, message, code) => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -45,26 +63,6 @@ Add your SendGrid email in  `emailsubscriber.js`
         console.error(error);
       });
 };
-
-   ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/Rajsuthan/User-Authentication-Node.js-Express.js
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Update your Databse url in `.env`
-   ```JS
-   DATABASE='ENTER YOUR DB URL'
-   ```
-3. Update your SendGrid API key in `.env`
-   ```JS
-   SENDGRID_API_KEY='ENTER YOUR SENDGRID API KEY'
    ```
 3. Start the server
    ```sh
