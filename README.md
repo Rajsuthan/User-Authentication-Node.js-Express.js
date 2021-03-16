@@ -72,6 +72,15 @@ Create a SendGrid API Key
    ```sh
    npm start
    ```
+## Environment variables
+
+These environment variables will be used for configuring different services by default:
+| Key                 | Default Value            | Description                                                                                         |
+|---------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
+| `DATABASE` | `url`              | MongoDB Cluster URL                                                                                   |
+| `SECRET` | `value`                  | Used for Creating unique tokens                                                                                  |
+| `API_KEY` | `key`               | API Key for your Endpoint (can be anything)                                                                              
+| `SENDGRID_API_KEY` | `key`               | Sendgrid API Key (for sending emails)                                                             
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
