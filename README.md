@@ -44,26 +44,26 @@ Create a SendGrid API Key
    ```JS
    SENDGRID_API_KEY='ENTER YOUR SENDGRID API KEY'
    ```
-4. Add your SendGrid email in  `emailsubscriber.js`
-```JS
-  exports.sendGridEmailResetPassword = (email, subject, message, code) => {
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const msg = {
-      to: email,
-      from: "example@example.com", // Please use your Sendgrid email
-      subject: subject,
-      text: `${message}\n\n This is your verification code: ${code}`,
+4. Add your SendGrid email in `emailsubscriber.js`
+    ```JS
+      exports.sendGridEmailResetPassword = (email, subject, message, code) => {
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        const msg = {
+          to: email,
+          from: "example@example.com", // Please use your Sendgrid email
+          subject: subject,
+          text: `${message}\n\n This is your verification code: ${code}`,
+        };
+        sgMail
+          .send(msg)
+          .then(() => {
+            console.log("Email sent");
+          })
+          .catch((error) => {
+            console.error(error);
+          });
     };
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log("Email sent");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-};
-   ```
+       ```
 3. Start the server
    ```sh
    npm start
